@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using KSP.Localization;
 using UnityEngine;
-using KSP.Localization;
 
 namespace OhScrap
 {
-    class BatteryFailureModule : BaseFailureModule
+    internal class BatteryFailureModule : BaseFailureModule
     {
         /// <summary>
         /// Adds sound FX for failures
@@ -15,7 +11,7 @@ namespace OhScrap
         //protected AudioSource Failure;
         //protected AudioSource Repair;
 
-        PartResource battery;
+        private PartResource battery;
 
         protected override void Overrides()
         {

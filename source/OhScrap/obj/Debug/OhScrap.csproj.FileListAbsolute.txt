@@ -1,0 +1,25 @@
+P:\Projects\OhScrap\source\OhScrap\obj\Debug\OhScrap.csproj.AssemblyReference.cache
+P:\Projects\OhScrap\source\OhScrap\obj\Debug\OhScrap.csproj.CoreCompileInputs.cache
+P:\Projects\OhScrap\GameData\OhScrap\Plugins\OhScrap.dll
+P:\Projects\OhScrap\GameData\OhScrap\Plugins\OhScrap.pdb
+P:\Projects\OhScrap\GameData\OhScrap\Plugins\OhScrap.xml
+P:\Projects\OhScrap\source\OhScrap\obj\Debug\OhScrap.csproj.Up2Date
+P:\Projects\OhScrap\source\OhScrap\obj\Debug\OhScrap.dll
+P:\Projects\OhScrap\source\OhScrap\obj\Debug\OhScrap.pdb
+S:\Games\Steam\steamapps\common\Kerbal Space Program\GameData\OhScrap\GameData\OhScrap\Plugins\OhScrap.dll
+S:\Games\Steam\steamapps\common\Kerbal Space Program\GameData\OhScrap\GameData\OhScrap\Plugins\OhScrap.pdb
+S:\Games\Steam\steamapps\common\Kerbal Space Program\GameData\OhScrap\GameData\OhScrap\Plugins\OhScrap.xml
+S:\Games\Steam\steamapps\common\Kerbal Space Program\GameData\OhScrap\source\OhScrap\obj\Debug\OhScrap.csproj.AssemblyReference.cache
+S:\Games\Steam\steamapps\common\Kerbal Space Program\GameData\OhScrap\source\OhScrap\obj\Debug\OhScrap.csproj.CoreCompileInputs.cache
+S:\Games\Steam\steamapps\common\Kerbal Space Program\GameData\OhScrap\source\OhScrap\obj\Debug\OhScrap.csproj.Up2Date
+S:\Games\Steam\steamapps\common\Kerbal Space Program\GameData\OhScrap\source\OhScrap\obj\Debug\OhScrap.dll
+S:\Games\Steam\steamapps\common\Kerbal Space Program\GameData\OhScrap\source\OhScrap\obj\Debug\OhScrap.pdb
+S:\Games\Steam\steamapps\common\Kerbal Space Program\GameData\OhScrap\Plugins\OhScrap.dll
+S:\Games\Steam\steamapps\common\Kerbal Space Program\GameData\OhScrap\Plugins\OhScrap.pdb
+S:\Games\Steam\steamapps\common\Kerbal Space Program\GameData\OhScrap\Plugins\OhScrap.xml
+S:\Output\OhScrap.dll
+S:\Output\OhScrap.pdb
+S:\Output\OhScrap.xml
+S:\Games\Steam\steamapps\common\Kerbal Space Program\GameData\OhScrap\source\Output\OhScrap.dll
+S:\Games\Steam\steamapps\common\Kerbal Space Program\GameData\OhScrap\source\Output\OhScrap.pdb
+S:\Games\Steam\steamapps\common\Kerbal Space Program\GameData\OhScrap\source\Output\OhScrap.xml

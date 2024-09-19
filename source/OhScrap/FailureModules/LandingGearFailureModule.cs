@@ -1,9 +1,9 @@
-using ModuleWheels;
 using KSP.Localization;
+using ModuleWheels;
 
 namespace OhScrap
 {
-    class LandingGearFailureModule : BaseFailureModule
+    internal class LandingGearFailureModule : BaseFailureModule
     {
         private ModuleWheelDeployment _wheel;
         protected override void Overrides()

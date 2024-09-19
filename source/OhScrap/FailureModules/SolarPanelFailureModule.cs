@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-using KSP.Localization;
+﻿using KSP.Localization;
 
 namespace OhScrap
 {
-    class SolarPanelFailureModule : BaseFailureModule
+    internal class SolarPanelFailureModule : BaseFailureModule
     {
-        ModuleDeployableSolarPanel panel;
-        bool originallyRetractable;
-        bool trackingFailure;
-        bool trackingSet = false;
+        private ModuleDeployableSolarPanel panel;
+        private bool originallyRetractable;
+        private bool trackingFailure;
+        private bool trackingSet = false;
 
         protected override void Overrides()
         {

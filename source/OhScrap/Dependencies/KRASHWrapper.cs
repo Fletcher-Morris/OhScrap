@@ -8,10 +8,8 @@
 // KRASH is defined when compiling KRASH, to avoid this module from being included.  
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Diagnostics;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
@@ -50,7 +48,7 @@ namespace OhScrap
             UnityEngine.Debug.Log("KRASHWrapper: " + msg);
         }
 
-        static UnityEngine.Object KRASHRef;
+        private static UnityEngine.Object KRASHRef;
         private static MethodInfo GetMethod(string type, string method)
         {
             if (KRASHAvailable)
@@ -549,6 +547,7 @@ namespace OhScrap
                 newVal = ((System.Reflection.PropertyInfo)member).GetValue(sourceObject, null);
             return newVal;
         }
+
         //private static object GetMemberInfoValue(System.Reflection.MemberInfo member, object sourceObject)
         //{
         //    object newVal;
@@ -561,8 +560,8 @@ namespace OhScrap
 
         #endregion
 
-        static double lastUpdate = 0;
-        static double firstUpdate = 0;
+        private static double lastUpdate = 0;
+        private static double firstUpdate = 0;
 
 
         public void testWrapper()

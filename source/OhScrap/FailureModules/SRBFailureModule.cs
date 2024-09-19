@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-using System.Runtime.CompilerServices;
+﻿using KSP.Localization;
 using KSP.UI.Screens;
-using KSP.Localization;
+using System.Text;
 
 namespace OhScrap
 {
-    class SRBFailureModule : BaseFailureModule
+    internal class SRBFailureModule : BaseFailureModule
     {
-        ModuleEngines engine;
-        bool message;
+        private ModuleEngines engine;
+        private bool message;
 
         //SRBs can fail straight away, and will override the "launched" bool because we need them to fail before the player launches.
         //They will however suppress the messages until the player tries to launch.
@@ -45,7 +40,7 @@ namespace OhScrap
             {
                 if (vessel.vesselType != VesselType.Debris)
                     ScreenMessages.PostScreenMessage(Localizer.Format("#OHS-srb-03", part.partInfo.title));
-                    //ScreenMessages.PostScreenMessage(part.partInfo.title + " has failed to ignite");
+                //ScreenMessages.PostScreenMessage(part.partInfo.title + " has failed to ignite");
                 StringBuilder msg = new StringBuilder();
                 msg.AppendLine(part.vessel.vesselName);
                 msg.AppendLine("");

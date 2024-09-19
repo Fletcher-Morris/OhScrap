@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using UnityEngine;
-using ScrapYard.Modules;
-using ScrapYard;
-using KSP;
-using KSP.Localization;
 
 namespace OhScrap
 {
@@ -16,20 +10,27 @@ namespace OhScrap
         public override void OnSave(ConfigNode node)
         {
             ConfigNode temp = node.GetNode("UPFMTracker");
+
             if (temp == null)
             {
                 node.AddNode("UPFMTracker");
                 temp = node.GetNode("UPFMTracker");
             }
-            foreach(var v in Utils.instance.generations)
+
+            foreach (KeyValuePair<uint, int> v in Utils.instance.generations)
             {
-                if (v.Key == 0) continue;
+                if (v.Key == 0)
+                {
+                    continue;
+                }
+
                 ConfigNode cn = new ConfigNode("PART");
                 cn.SetValue("ID", v.Key, true);
                 cn.SetValue("Generation", v.Value, true);
                 cn.SetValue("Tested", Utils.instance.testedParts.Contains(v.Key), true);
                 temp.AddNode(cn);
             }
+
             temp.SetValue("FlightWindow", Utils.instance.flightWindow, true);
             temp.SetValue("EditorWindow", Utils.instance.editorWindow, true);
             Debug.Log("[OhScrap]: Saved");
@@ -38,29 +39,54 @@ namespace OhScrap
         public override void OnLoad(ConfigNode node)
         {
             ConfigNode temp = node.GetNode("UPFMTracker");
-            if (temp == null) return;
+
+            if (temp == null)
+            {
+                return;
+            }
+
             Utils.instance.generations.Clear();
             Utils.instance.testedParts.Clear();
             bool.TryParse(temp.GetValue("FlightWindow"), out Utils.instance.flightWindow);
             bool.TryParse(temp.GetValue("EditorWindow"), out Utils.instance.editorWindow);
             ConfigNode[] nodes = temp.GetNodes("PART");
-            if (nodes.Count() == 0) return;
+
+            if (nodes.Count() == 0)
+            {
+                return;
+            }
+
             for (int i = 0; i < nodes.Count(); i++)
             {
                 ConfigNode cn = nodes.ElementAt(i);
-                string s = cn.GetValue("ID");
-                uint.TryParse(s, out uint u);
-                if (int.TryParse(cn.GetValue("Generation"), out int g)) Utils.instance.generations.Add(u, g);
-                if (bool.TryParse(cn.GetValue("Tested"), out bool b) == true) Utils.instance.testedParts.Add(u);
+                string partIdString = cn.GetValue("ID");
+                uint.TryParse(partIdString, out uint partId);
+
+                if (int.TryParse(cn.GetValue("Generation"), out int partGeneration))
+                {
+                    Utils.instance.generations.Add(partId, partGeneration);
+                }
+
+                if (bool.TryParse(cn.GetValue("Tested"), out bool isPartTested) == true)
+                {
+                    Utils.instance.testedParts.Add(partId);
+                }
             }
+
             nodes = temp.GetNodes("FAILURE");
-            if (nodes.Count() == 0) return;
+
+            if (nodes.Count() == 0)
+            {
+                return;
+            }
+
             for (int i = 0; i < nodes.Count(); i++)
             {
                 ConfigNode cn = nodes.ElementAt(i);
                 //string s = cn.GetValue("Name");
-                _= cn.GetValue("Name");
+                _ = cn.GetValue("Name");
             }
+
             Debug.Log("[OhScrap]: Loaded");
         }
     }

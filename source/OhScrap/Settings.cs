@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-using KSP.Localization;
-
-namespace OhScrap
+﻿namespace OhScrap
 {
-    class Settings : GameParameters.CustomParameterNode
+    internal class Settings : GameParameters.CustomParameterNode
     {
         // title is the left side,
 
@@ -72,7 +65,7 @@ namespace OhScrap
 
     }
 
-    class OhScrapSettings : GameParameters.CustomParameterNode
+    internal class OhScrapSettings : GameParameters.CustomParameterNode
     {
         // title is the section title side,
         public override string Section { get { return "#OHS-modname"; } }
@@ -122,7 +115,8 @@ namespace OhScrap
         [GameParameters.CustomParameterUI("#OHS-set-Parts", toolTip = "#OHS-set-Parts-tt", newGameOnly = false, unlockedDuringMission = true)]
         public bool requireParts = false;
     }
-    class DebugSettings : GameParameters.CustomParameterNode
+
+    internal class DebugSettings : GameParameters.CustomParameterNode
     {
         // title is the section title side,
         public override string Section { get { return "#OHS-modname"; } }

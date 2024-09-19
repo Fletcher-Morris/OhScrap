@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-using KSP.Localization;
+﻿using KSP.Localization;
 
 namespace OhScrap
 {
-    class ParachuteFailureModule : BaseFailureModule
+    internal class ParachuteFailureModule : BaseFailureModule
     {
-        ModuleParachute chute;
+        private ModuleParachute chute;
 
         public override bool FailureAllowed()
         {

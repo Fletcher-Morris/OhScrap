@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OhScrap</RootNamespace>
     <AssemblyName>OhScrap</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <LangVersion>latest</LangVersion>
@@ -17,9 +17,9 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugType>portable</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\GameData\OhScrap\Plugins\</OutputPath>
+    <OutputPath>..\Output\</OutputPath>
     <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -39,22 +39,47 @@
     <DocumentationFile>..\..\docs\Code\OhScrap.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="$(K112)Assembly-CSharp.dll">
-       <Private>False</Private>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>S:\Games\Steam\steamapps\common\Kerbal Space Program\KSP_x64_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="$(K112)Assembly-CSharp-firstpass.dll">
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>S:\Games\Steam\steamapps\common\Kerbal Space Program\KSP_x64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp.dll">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass.dll">
       <Private>False</Private>
     </Reference>
     <Reference Include="$(K112)UnityEngine*.dll">
       <Private>False</Private>
     </Reference>
-    <Reference Include="$(K112)UnityEngine.UI.dll">
+    <Reference Include="ScrapYard">
+      <HintPath>S:\Games\Steam\steamapps\common\Kerbal Space Program\GameData\ScrapYard\Plugins\ScrapYard.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>S:\Games\Steam\steamapps\common\Kerbal Space Program\KSP_x64_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>S:\Games\Steam\steamapps\common\Kerbal Space Program\KSP_x64_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>S:\Games\Steam\steamapps\common\Kerbal Space Program\KSP_x64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>S:\Games\Steam\steamapps\common\Kerbal Space Program\KSP_x64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>S:\Games\Steam\steamapps\common\Kerbal Space Program\KSP_x64_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>S:\Games\Steam\steamapps\common\Kerbal Space Program\KSP_x64_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI.dll">
       <Private>False</Private>
     </Reference>
-    <Reference Include="$(K112)..\..\GameData\ScrapYard\Plugins\ScrapYard.dll">
+    <Reference Include="..\..\GameData\ScrapYard\Plugins\ScrapYard.dll">
       <Private>False</Private>
-    </Reference>
-    <Reference Include="System" />
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -65,8 +90,6 @@
     <Compile Include="FailureModules\BatteryFailureModule.cs" />
     <Compile Include="FailureModules\ControlSurfaceFailureModule.cs" />
     <Compile Include="FailureModules\EngineFailureModule.cs" />
-    <Compile Include="FailureModules\FARControlSurfaceFailureModule.cs" />
-    <Compile Include="FailureModules\FARParachuteFailureModule.cs" />
     <Compile Include="FailureModules\LandingGearFailureModule.cs" />
     <Compile Include="FailureModules\LightFailureModule.cs" />
     <Compile Include="FailureModules\ParachuteFailureModule.cs" />
@@ -108,19 +131,8 @@
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>
-set K112=$(K112)
-IF "%25K112%25"=="" (
-    ECHO Configuration error - K112 not specified in project.
-    ECHO Either set K100 environment variable
-    PAUSE
-    rem GOTO DONE
-)
-start /D $(ProjectDir)..\  /WAIT _addonDeploy.bat $(ProjectDir)
-if $(ConfigurationName) == Release start /D $(ProjectDir)..\   /WAIT _addonRelease.bat $(ProjectDir)
-del $(TargetDir)\*.tmp
-:DONE
-    </PostBuildEvent>
+    <PostBuildEvent>copy "$(TargetDir)\$(ProjectName).dll" "$(SolutionDir)\..\Plugins\$(ProjectName).dll"
+copy "$(TargetDir)\$(ProjectName).xml" "$(SolutionDir)\..\Plugins\$(ProjectName).xml"</PostBuildEvent>
   </PropertyGroup>
   <ProjectExtensions>
     <MonoDevelop>

@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using KSP;
-using KSP.Localization;
+﻿using KSP.Localization;
 using UnityEngine;
 
 namespace OhScrap
 {
     //Handles Stock Antenna Failures. 
-    class AntennaFailureModule : BaseFailureModule
+    internal class AntennaFailureModule : BaseFailureModule
     {
-        ModuleDataTransmitter antenna;
-        ModuleDeployableAntenna deployableAntenna;
+        private ModuleDataTransmitter antenna;
+        private ModuleDeployableAntenna deployableAntenna;
         [KSPField(isPersistant = true, guiActive = false)]
-        double originalPower;
+        private double originalPower;
 
 
         protected override void Overrides()
@@ -43,9 +38,9 @@ namespace OhScrap
                 if (deployableAntenna.deployState != ModuleDeployablePart.DeployState.EXTENDED) return false;
             }
             if (antenna == null) return false;
-            return (HighLogic.CurrentGame.Parameters.CustomParams<Settings>().AntennaFailureModuleAllowed
+            return HighLogic.CurrentGame.Parameters.CustomParams<Settings>().AntennaFailureModuleAllowed
                     && CommNet.CommNetScenario.CommNetEnabled
-                    && antenna.CommType != 0); // Not an internal antenna. Command pods without external antennas should not get an antenna failure.
+                    && antenna.CommType != 0; // Not an internal antenna. Command pods without external antennas should not get an antenna failure.
         }
         public override void FailPart()
         {

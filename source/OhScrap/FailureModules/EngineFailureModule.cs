@@ -1,29 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using KSP.Localization;
 using UnityEngine;
-using KSP.Localization;
 
 namespace OhScrap
 {
-    class EngineFailureModule : BaseFailureModule
+    internal class EngineFailureModule : BaseFailureModule
     {
-        ModuleEngines engine;
-        EngineModuleIfc engineWrapper;
-        ModuleGimbal gimbal;
-
-        double timeBetweenFailureEvents = 0;
-
-        int fuelLineCounter = 5;
+        private ModuleEngines engine;
+        private EngineModuleIfc engineWrapper;
+        private ModuleGimbal gimbal;
+        private double timeBetweenFailureEvents = 0;
+        private int fuelLineCounter = 5;
 
         [KSPField(isPersistant = true, guiActive = false)]
-        float fuelFlowMultiplier = 1;
+        private float fuelFlowMultiplier = 1;
 
         [KSPField(isPersistant = true, guiActive = false)]
-        int spaceEngineExpectedLifetime = 3;
+        private int spaceEngineExpectedLifetime = 3;
         [KSPField(isPersistant = true, guiActive = false)]
-        float spaceEngineBaseChanceOfFailure = 0.1f;
+        private float spaceEngineBaseChanceOfFailure = 0.1f;
 
 
         protected override void Overrides()
@@ -178,7 +172,7 @@ namespace OhScrap
             }
         }
 
-        void LeakFuel()
+        private void LeakFuel()
         {
             part.RequestResource("LiquidFuel", 1.0);
             ScreenMessages.PostScreenMessage("Fuel Line Leaking!");

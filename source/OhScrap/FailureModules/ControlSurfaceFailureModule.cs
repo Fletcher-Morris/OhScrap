@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using KSP.Localization;
 using UnityEngine;
-using KSP.Localization;
 
 namespace OhScrap
 {
-    class ControlSurfaceFailureModule : BaseFailureModule
+    internal class ControlSurfaceFailureModule : BaseFailureModule
     {
-        ModuleControlSurface controlSurface;
+        private ModuleControlSurface controlSurface;
 
         protected override void Overrides()
         {
@@ -26,8 +22,8 @@ namespace OhScrap
         {
             if (part.vessel.atmDensity == 0) return false;
             if (controlSurface == null) return false;
-            return (HighLogic.CurrentGame.Parameters.CustomParams<Settings>().ControlSurfaceFailureModuleAllowed
-            && !ModWrapper.FerramWrapper.available);
+            return HighLogic.CurrentGame.Parameters.CustomParams<Settings>().ControlSurfaceFailureModuleAllowed
+            && !ModWrapper.FerramWrapper.available;
         }
         //control surface will stick and not respond to input
         public override void FailPart()

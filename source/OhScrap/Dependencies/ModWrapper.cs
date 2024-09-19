@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using UnityEngine;
 
 namespace OhScrap
@@ -21,12 +18,12 @@ namespace OhScrap
             {
                 get
                 {
-                    bool loaded = (RT != null);
+                    bool loaded = RT != null;
                     if (!loaded && !tried)
                     {
                         for (int i = 0; i < AssemblyLoader.loadedAssemblies.Count; i++)
                         {
-                            var Asm = AssemblyLoader.loadedAssemblies[i];
+                            AssemblyLoader.LoadedAssembly Asm = AssemblyLoader.loadedAssemblies[i];
                             if (Asm.dllName == "RemoteTech")
                             {
                                 loaded = true;
@@ -79,12 +76,12 @@ namespace OhScrap
             {
                 get
                 {
-                    bool loaded = (FAR != null);
+                    bool loaded = FAR != null;
                     if (!loaded && !tried)
                     {
                         for (int i = 0; i < AssemblyLoader.loadedAssemblies.Count; i++)
                         {
-                            var Asm = AssemblyLoader.loadedAssemblies[i];
+                            AssemblyLoader.LoadedAssembly Asm = AssemblyLoader.loadedAssemblies[i];
                             if (Asm.dllName == "FerramAerospaceResearch")
                             {
                                 loaded = true;
@@ -121,11 +118,11 @@ namespace OhScrap
 
             public static bool GetCtrlSurfIsSpoiler(PartModule p)
             {
-                return (bool)GetReflectionField<bool>(p, "isSpoiler");
+                return GetReflectionField<bool>(p, "isSpoiler");
             }
             public static bool GetCtrlSurfIsFlap(PartModule p)
             {
-                return (bool)GetReflectionField<bool>(p, "isSpoiler");
+                return GetReflectionField<bool>(p, "isSpoiler");
             }
 
 
@@ -180,7 +177,7 @@ namespace OhScrap
             public static bool IsDeployed(PartModule p)
             {
                 DeploymentStates state = GetDeploymentState(p);
-                return (state == DeploymentStates.DEPLOYED || state == DeploymentStates.PREDEPLOYED);
+                return state == DeploymentStates.DEPLOYED || state == DeploymentStates.PREDEPLOYED;
             }
 
             public static DeploymentStates GetDeploymentState(PartModule p)

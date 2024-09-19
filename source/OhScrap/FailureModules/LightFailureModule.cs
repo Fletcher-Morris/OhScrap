@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-using KSP.Localization;
+﻿using KSP.Localization;
 
 namespace OhScrap
 {
-    class LightFailureModule : BaseFailureModule
+    internal class LightFailureModule : BaseFailureModule
     {
-        ModuleLight light;
+        private ModuleLight light;
 
         ///// <summary>
         ///// Adds sound FX for failures
@@ -17,7 +12,7 @@ namespace OhScrap
         //protected AudioSource Failure;
         //protected AudioSource Repair;
 
-        bool lightState = false;
+        private bool lightState = false;
 
         public override bool FailureAllowed()
         {

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-using KSP.Localization;
+﻿using KSP.Localization;
 
 namespace OhScrap
 {
-    class ReactionWheelFailureModule : BaseFailureModule
+    internal class ReactionWheelFailureModule : BaseFailureModule
     {
-        ModuleReactionWheel rw;
+        private ModuleReactionWheel rw;
 
         protected override void Overrides()
         {

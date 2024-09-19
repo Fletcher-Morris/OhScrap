@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
 using System.IO;
+using System.Linq;
+using UnityEngine;
 
 namespace OhScrap
 {
     [KSPAddon(KSPAddon.Startup.Flight, false)]
-    class Logger : MonoBehaviour
+    internal class Logger : MonoBehaviour
     {
         public List<string> logs = new List<string>();
         public static Logger instance;
-        string directory;
+        private string directory;
         public void Awake()
         {
             logs.Add("Using OhScrap! " + Version.Number);
@@ -22,7 +21,7 @@ namespace OhScrap
             DirectoryInfo source = new DirectoryInfo(directory);
             foreach (FileInfo fi in source.GetFiles())
             {
-                var creationTime = fi.CreationTime;
+                DateTime creationTime = fi.CreationTime;
                 if (creationTime < (DateTime.Now - new TimeSpan(1, 0, 0, 0)))
                 {
                     fi.Delete();
@@ -126,4 +125,3 @@ namespace OhScrap
         }
     }
 }
-

@@ -1,18 +1,16 @@
-﻿using System;
+﻿using KSP.Localization;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using UnityEngine;
-using KSP.Localization;
 
 namespace OhScrap
 {
-    class TankFailureModule : BaseFailureModule
+    internal class TankFailureModule : BaseFailureModule
     {
-        PartResource leaking;
+        private PartResource leaking;
         [KSPField(isPersistant = true, guiActive = false)]
         public string leakingName = "None";
-        bool cantLeak = false;
+        private bool cantLeak = false;
 
         protected override void Overrides()
         {

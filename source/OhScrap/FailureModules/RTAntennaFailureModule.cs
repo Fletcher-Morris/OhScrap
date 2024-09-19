@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
+﻿using KSP.Localization;
 using UnityEngine;
-using KSP.Localization;
 
 namespace OhScrap
 {
     //Allows For failures on Antennas when remote tech is installed. Can fail Parts with ModuleRTAntenna.
-    class RTAntennaFailureModule : BaseFailureModule
+    internal class RTAntennaFailureModule : BaseFailureModule
     {
         private PartModule antenna;
         [KSPField(isPersistant = true, guiActive = false)]
-        bool RTAvailable = ModWrapper.RemoteTechWrapper.available;
+        private bool RTAvailable = ModWrapper.RemoteTechWrapper.available;
 
         protected override void Overrides()
         {
@@ -39,7 +34,7 @@ namespace OhScrap
             if (!antenna) return false;
             if (!RTAvailable) return false;
             if (!ModWrapper.RemoteTechWrapper.GetAntennaDeployed(antenna)) return false; //Do not fail antennas that are deployed. Returns true if it cant be animated.
-            return (HighLogic.CurrentGame.Parameters.CustomParams<Settings>().AntennaFailureModuleAllowed);
+            return HighLogic.CurrentGame.Parameters.CustomParams<Settings>().AntennaFailureModuleAllowed;
         }
 
         public override void FailPart()

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-using KSP.Localization;
+﻿using KSP.Localization;
 
 namespace OhScrap
 {
-    class RCSFailureModule : BaseFailureModule
+    internal class RCSFailureModule : BaseFailureModule
     {
-        ModuleRCS rcs;
+        private ModuleRCS rcs;
 
         public override bool FailureAllowed()
         {

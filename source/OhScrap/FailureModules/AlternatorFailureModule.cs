@@ -2,7 +2,7 @@ using KSP.Localization;
 
 namespace OhScrap
 {
-    class AlternatorFailureModule : BaseFailureModule
+    internal class AlternatorFailureModule : BaseFailureModule
     {
         private ModuleAlternator _alternator;
         protected override void Overrides()

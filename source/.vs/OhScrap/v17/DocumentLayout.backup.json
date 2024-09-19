@@ -1,0 +1,83 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "S:\\Games\\Steam\\steamapps\\common\\Kerbal Space Program\\GameData\\OhScrap\\source\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{91503855-3C04-4DB5-8878-4454D9F5877A}|OhScrap\\OhScrap.csproj|s:\\games\\steam\\steamapps\\common\\kerbal space program\\gamedata\\ohscrap\\source\\ohscrap\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91503855-3C04-4DB5-8878-4454D9F5877A}|OhScrap\\OhScrap.csproj|solutionrelative:ohscrap\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91503855-3C04-4DB5-8878-4454D9F5877A}|OhScrap\\OhScrap.csproj|S:\\Games\\Steam\\steamapps\\common\\Kerbal Space Program\\GameData\\OhScrap\\source\\ohscrap\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91503855-3C04-4DB5-8878-4454D9F5877A}|OhScrap\\OhScrap.csproj|solutionrelative:ohscrap\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91503855-3C04-4DB5-8878-4454D9F5877A}|OhScrap\\OhScrap.csproj|S:\\Games\\Steam\\steamapps\\common\\Kerbal Space Program\\GameData\\OhScrap\\source\\ohscrap\\failuremodules\\basefailuremodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91503855-3C04-4DB5-8878-4454D9F5877A}|OhScrap\\OhScrap.csproj|solutionrelative:ohscrap\\failuremodules\\basefailuremodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|OhScrap||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BaseFailureModule.cs",
+              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\Kerbal Space Program\\GameData\\OhScrap\\source\\OhScrap\\FailureModules\\BaseFailureModule.cs",
+              "RelativeDocumentMoniker": "OhScrap\\FailureModules\\BaseFailureModule.cs",
+              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\Kerbal Space Program\\GameData\\OhScrap\\source\\OhScrap\\FailureModules\\BaseFailureModule.cs",
+              "RelativeToolTip": "OhScrap\\FailureModules\\BaseFailureModule.cs",
+              "ViewState": "AgIAAOcAAAAAAAAAAAArwPkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T16:59:58.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Data.cs",
+              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\Kerbal Space Program\\GameData\\OhScrap\\source\\OhScrap\\Data.cs",
+              "RelativeDocumentMoniker": "OhScrap\\Data.cs",
+              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\Kerbal Space Program\\GameData\\OhScrap\\source\\OhScrap\\Data.cs",
+              "RelativeToolTip": "OhScrap\\Data.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T16:59:39.24Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OhScrap",
+              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\Kerbal Space Program\\GameData\\OhScrap\\source\\OhScrap\\OhScrap.csproj",
+              "RelativeDocumentMoniker": "OhScrap\\OhScrap.csproj",
+              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\Kerbal Space Program\\GameData\\OhScrap\\source\\OhScrap\\OhScrap.csproj",
+              "RelativeToolTip": "OhScrap\\OhScrap.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-09-19T16:11:47.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Utils.cs",
+              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\Kerbal Space Program\\GameData\\OhScrap\\source\\OhScrap\\Utils.cs",
+              "RelativeDocumentMoniker": "OhScrap\\Utils.cs",
+              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\Kerbal Space Program\\GameData\\OhScrap\\source\\OhScrap\\Utils.cs",
+              "RelativeToolTip": "OhScrap\\Utils.cs",
+              "ViewState": "AgIAAM0BAAAAAAAAAAAvwOMBAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-14T00:24:48.5Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

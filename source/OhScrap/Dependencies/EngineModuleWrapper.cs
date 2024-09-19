@@ -21,7 +21,6 @@
     ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 */
-using System;
 using System.Diagnostics;
 
 namespace OhScrap
@@ -172,8 +171,8 @@ namespace OhScrap
                 ModuleEngines e = pm as ModuleEngines;
                 if (string.IsNullOrEmpty(engineID) || engineID.ToLowerInvariant() == e.engineID.ToLowerInvariant())
                 {
-                    if (RealFuelsEngine.IsCompatible(e))    return new EngineModuleWrapper(part, new RealFuelsEngine(part, e));
-                    if (SolverEngine.IsCompatible(e))       return new EngineModuleWrapper(part, new SolverEngine(part, e));
+                    if (RealFuelsEngine.IsCompatible(e)) return new EngineModuleWrapper(part, new RealFuelsEngine(part, e));
+                    if (SolverEngine.IsCompatible(e)) return new EngineModuleWrapper(part, new SolverEngine(part, e));
                 }
                 return new EngineModuleWrapper(part, new StockEngine(part, pm as ModuleEngines));
             }

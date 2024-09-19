@@ -1,16 +1,15 @@
-﻿using System;
+﻿using KSP.Localization;
+using ScrapYard.Modules;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using UnityEngine;
-using ScrapYard.Modules;
-using KSP.Localization;
 
 namespace OhScrap
 {
     //This handles all events that need to be in a PartModule but if we put it in the main BaseFailureModule would appear multiple times on a part.
     // This module is attached to any part that has at least one other Failure Module
-    class ModuleUPFMEvents : PartModule
+    internal class ModuleUPFMEvents : PartModule
     {
         /// <summary>DoNotRecover (DNR)</summary>
         [KSPField(isPersistant = true, guiActive = false)]
@@ -20,8 +19,8 @@ namespace OhScrap
         /// <summary>Tested</summary>
         [KSPField(isPersistant = false, guiActiveEditor = true, guiName = "#OHS-UPFME-tested")]
         public bool tested = false;
-        BaseFailureModule repair;
-        ModuleSYPartTracker SYP;
+        private BaseFailureModule repair;
+        private ModuleSYPartTracker SYP;
         public bool refreshed = false;
 
         /// <summary>Generation</summary>
@@ -234,7 +233,7 @@ namespace OhScrap
             return roll < repairChance;
         }
 
-        bool Repaired()
+        private bool Repaired()
         {
             List<BaseFailureModule> failedList = part.FindModulesImplementing<BaseFailureModule>();
             if (failedList.Count() == 0) return true;
@@ -252,6 +251,5 @@ namespace OhScrap
             doNotRecover = false;
             return true;
         }
-
     }
 }
